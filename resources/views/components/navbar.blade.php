@@ -21,7 +21,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#">About</a>
+                <a href="{{ route('gempa') }}">Gempa</a>
                 <a
                     href="#pageSubmenu"
                     data-toggle="collapse"

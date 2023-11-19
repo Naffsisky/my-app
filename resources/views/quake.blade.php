@@ -10,7 +10,35 @@
     Real Time.
     </p>
     <div class="line"></div>
-    <table class="table-responsive">
+    <table class="table table-responsive">
+        <tr>
+            <th>Tanggal</th>
+            <th>Wilayah</th>
+            <th>Jam</th>
+            <th>Magnitude</th>
+        </tr>
+        <tr>
+            <td>{{ $quakeData['tanggal'] }}</td>
+            <td>{{ $quakeData['wilayah'] }}</td>
+            <td>{{ $quakeData['jam'] }}</td>
+            <td>{{ $quakeData['magnitude'] }}</td>
+        </tr>
+    </table>  
+    <table class="table table-responsive">
+        <tr>
+            <th>Potensi</th>
+        </tr>
+        <tr>
+            <td>{{ $quakeData['potensi'] }}</td>
+        </tr>
+    </table>  
+    <div style="text-align: center;"><img src="{{ $quakeData['shakemap'] }}"> </div>
+    
+    <div class="line"></div>
+    <h2 class="align-center">Recently Earthquakes > 5 Magnitude</h2>
+        @foreach($quakeBigData as $row)
+        <br/>
+    <table class="table table-responsive">
         <tr>
             <th>Tanggal</th>
             <th>Wilayah</th>
@@ -19,24 +47,14 @@
             <th>Potensi</th>
         </tr>
         <tr>
-            <td>{{ $quakeData['tanggal'] }}</td>
-            <td>{{ $quakeData['wilayah'] }}</td>
-            <td>{{ $quakeData['jam'] }}</td>
-            <td>{{ $quakeData['magnitude'] }}</td>
-            <td>{{ $quakeData['potensi'] }}</td>
+            <td>{{ $row['Tanggal'] }}</td>
+            <td>{{ $row['Wilayah'] }}</td>
+            <td>{{ $row['Jam'] }}</td>
+            <td>{{ $row['Magnitude'] }}</td>
+            <td>{{ $row['Potensi'] }}</td>
         </tr>
-    </table>  
-    <div class="line"></div>
-    <h2 class="align-center">Recently Earthquakes > 5 Magnitude</h2>
-    <table class="table-responsive">
-    <tr>
-        <th>Tanggal</th>
-        <th>Jam</th>
-        <th>Wilayah</th>
-        <th>Magnitude</th>
-        <th>Potensi</th>
-    </tr>
-</table>
+    </table>
+        @endforeach
     <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

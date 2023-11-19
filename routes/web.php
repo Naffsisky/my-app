@@ -22,7 +22,9 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/gempa', [ApiController::class, 'getQuakeData'])->name('gempa');;
+// Route::get('/gempa', [ApiController::class, 'getQuakeData'])->name('gempa');;
+
+Route::get('/gempa', [ApiController::class, 'getQuakeData'])->name('gempa');
 
 // Route::get('/gempa', function () {
 //     $quakeData = (new ApiController())->getQuakeData();

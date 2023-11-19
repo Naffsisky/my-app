@@ -221,26 +221,28 @@ a.article:hover {
     }
 }
 
-table tr th {
-    text-align: center
-}
-
+table tr th,
 table tr td {
-    text-align: center
+    text-align: center;
 }
 
-td {
-    padding: 10px
+.table {
+    table-layout: fixed;
+    width: 100%; /* Atur lebar tabel sesuai kebutuhan */
 }
 
-h1 {
-    text-align: center
+.table th,
+.table td {
+    text-align: center;
+    padding: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Jika konten terlalu panjang, potong dan tampilkan elipsis */
+    /* white-space: nowrap;  Teks tidak pindah ke baris baru */
 }
 
-.desc {
-    text-align: center
-}
 
+h1,
+.desc,
 .align-center {
-    text-align: center
+    text-align: center;
 }
