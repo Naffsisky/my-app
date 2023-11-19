@@ -1,68 +1,50 @@
-@extends('layout.master')
+@extends('layouts.master')
 
 @section('content')
+<main class="container mt-4">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="section kiri">
+        <h2>Information</h2>
 
-<h2>Collapsible Sidebar Using Bootstrap 3</h2>
-
-<p class="lead">
-    This pen is a part of a
-    <a href="https://bootstrapious.com/p/bootstrap-sidebar"
-        >Bootstrap sidebar tutorial</a
-    >
-    from Bootstrapious.com. CC-BY licensed.
-</p>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-
-<div class="line"></div>
-
-<h2>Lorem Ipsum Dolor</h2>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-
-<div class="line"></div>
-
-<h2>Lorem Ipsum Dolor</h2>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-
-<div class="line"></div>
-
-<h3>Lorem Ipsum Dolor</h3>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-
-
+        @if(isset($notes))
+            @foreach($notes as $note)
+                <p>Title: {{ $note['title'] }}</p>
+                <p>Tags: {{ $note['tags'] }}</p>
+                <p>Body: {{ $note['body'] }}</p>
+            @endforeach
+        @else
+            <p>No notes available</p>
+        @endif
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="section tengah">
+        <h2>What are you list today?</h2>
+        <div class="row justify-content-center">
+            <div class="col col-lg-6">
+                <div class="card mb-4">
+                <div class="card-body">
+                    <textarea id="inputTodo" type="text" class="form-control mb-2"></textarea>
+                    <button id="addTodo" class="btn btn-primary float-end">Tambah</button>
+                </div>
+                </div>
+                <h4>My Agenda</h4>
+                <ul id="todoList" class="list-group">
+                  
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="section kanan">
+        <h2>Menu & Tools</h2>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Todo List</a></li>
+        <li><a href="#">Weather</a></li>
+      </div>
+    </div>
+  </div>
+</main>
 @endsection

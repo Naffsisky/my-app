@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ApiController;
+use App\Http\Controllers\APIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,20 +15,7 @@ use App\Http\Controllers\ApiController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/', function () {
     return view('index');
 })->name('index');
 
-// Route::get('/gempa', [ApiController::class, 'getQuakeData'])->name('gempa');;
-
-Route::get('/gempa', [ApiController::class, 'getQuakeData'])->name('gempa');
-
-// Route::get('/gempa', function () {
-//     $quakeData = (new ApiController())->getQuakeData();
-//     $bigQuakeData = (new ApiController())->getBigQuakeData();
-
-//     return view('quake', compact('quakeData', 'bigQuakeData'));
-// }) -> name('gempa');
+Route::get('/notes', [APIController::class, 'getNotes'])->name('notes');

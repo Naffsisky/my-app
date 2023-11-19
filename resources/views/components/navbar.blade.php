@@ -1,53 +1,24 @@
-<!-- resources/views/components/navbar.blade.php -->
-
-<nav id="sidebar">
-        <div class="sidebar-header">
-            <img src="{{ asset('logos/logo2.png') }}" alt="" style="width: 70px;" />
-        </div>
-
-        <ul class="list-unstyled components">
-            <p><a href="{{ route('index') }}">My Site</a></p>
-            <li class="active">
-                <a
-                    href="#homeSubmenu"
-                    data-toggle="collapse"
-                    aria-expanded="false"
-                    >Home</a
-                >
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li><a href="#">Home 1</a></li>
-                    <li><a href="#">Home 2</a></li>
-                    <li><a href="#">Home 3</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="{{ route('gempa') }}">Gempa</a>
-                <a
-                    href="#pageSubmenu"
-                    data-toggle="collapse"
-                    aria-expanded="false"
-                    >Pages</a
-                >
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li><a href="#">Page 1</a></li>
-                    <li><a href="#">Page 2</a></li>
-                    <li><a href="#">Page 3</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-
-        <ul class="list-unstyled CTAs">
-            <li>
-                <a
-                    href="{{ route('index') }}"
-                    >Back to the home</a
-                >
-            </li>
-        </ul>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tentang Kami</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Layanan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Kontak</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
